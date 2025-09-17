@@ -1,0 +1,136 @@
+/* General layout */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #aec2cc;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h1 {
+  color: #1a2a6c;
+  font-size: 72px; /* 3x bigger */
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+p {
+  color: #333;
+  font-size: 36px; /* 3x bigger */
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Upload button */
+.upload-btn {
+  margin: 20px 0 30px;
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Loading & Error */
+.loading {
+  color: #0078d7;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* Summary cards */
+.summary {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.summary-card {
+  flex: 1;
+  margin: 10px;
+  padding: 25px;
+  font-size: 48px; /* 3x bigger */
+  font-weight: bold;
+  border-radius: 15px;
+  color: rgb(70, 134, 135);
+}
+
+.summary-card.high {
+  background: #ca7575;
+}
+
+.summary-card.medium {
+  background: #e5b586;
+}
+
+.summary-card.low {
+  background: #91ef96;
+}
+
+/* Table styles */
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 28px; /* 3x bigger */
+  font-weight: bold;
+}
+
+.results-table th,
+.results-table td {
+  border: 2px solid #444;
+  padding: 15px;
+  text-align: center;
+}
+
+.results-table th {
+  background-color: #1a2a6c;
+  color: rgb(243, 200, 92);
+}
+
+.results-table tr:nth-child(even) {
+  background-color: #0a657b;
+}
+
+.results-table tr:hover {
+  background-color: #439ec4;
+}
+
+/* Severity badges */
+.badge {
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 28px;
+  color: rgb(133, 177, 224);
+}
+
+.badge-high {
+  background: #d32f2f;
+}
+
+.badge-medium {
+  background: #f57c00;
+}
+
+.badge-low {
+  background: #388e3c;
+}
