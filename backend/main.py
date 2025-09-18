@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 # -------------------------------------------------
-# Upload logs endpoint (with safe decoding)
+# Upload logs endpoint (with safe decoding + fixed classification)
 # -------------------------------------------------
 @app.post("/upload-logs/")
 async def upload_logs(file: UploadFile = File(...)):
@@ -55,14 +55,16 @@ async def upload_logs(file: UploadFile = File(...)):
     if not logs:
         return {"results": []}
 
-    # Simple classification
+    # Simple classification (fixed: clean line before checking)
     results = []
     for idx, log in enumerate(logs[:5]):  # only first 5 lines
-        if "login" in log.lower():
+        clean_log = log.strip().lower()   # 🔥 normalize log line
+
+        if "login" in clean_log:
             threat = "Insider Threat"
             severity = "Medium"
             mitigation = "Enable MFA, review login attempts"
-        elif "suspicious" in log.lower() or "exe" in log.lower():
+        elif "suspicious" in clean_log or "exe" in clean_log:
             threat = "Phishing / Malware"
             severity = "High"
             mitigation = "Block sender IP, reset accounts"
